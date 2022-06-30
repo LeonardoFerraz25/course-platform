@@ -1,8 +1,10 @@
-import './App.css'
+import { Router } from './Router';
 
 function App() {
   return (
-    <h1>inicio</h1>
+    <div>
+      <Router />
+    </div>
   )
 }
 
