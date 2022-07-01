@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { Header } from "../components/Header";
 import { Sidebar } from "../components/Sidebar";
+import { Categories } from "../components/Categories";
 import { Video } from "../components/Video";
 
 export function Course() {
@@ -12,7 +13,8 @@ export function Course() {
         { slug 
           ? <Video lessonSlug={slug} />
           : <div className="flex-1"/>}
-        <Sidebar />
+        <Categories />
+         {/* <Sidebar /> */}
       </main>
     </div>
   );

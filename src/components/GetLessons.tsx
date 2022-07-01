@@ -3,8 +3,12 @@ import { Key } from "react";
 import { Lesson } from "./Lesson";
 
 const GET_LESSONS_QUERY = gql`
-  query {
-  lessons(orderBy: availableAt_ASC, stage: PUBLISHED) {
+ query GetLessonsByCategory ($category: String) {
+  lessons(
+    orderBy: availableAt_ASC
+    stage: PUBLISHED
+    where: {AND: {challenge: {name: $category}}}
+  ) {
     id
     title
     slug
@@ -24,15 +28,18 @@ interface GetLessonsQueryResponse {
   }
 }
 
-export function Sidebar() {
-  const { data } = useQuery<GetLessonsQueryResponse>(GET_LESSONS_QUERY);
-  console.log(data);
+interface GetLessonsProps {
+  categoryType: string;
+}
+
+export function GetLessons(props: GetLessonsProps) {
+  const { data } = useQuery<GetLessonsQueryResponse>(GET_LESSONS_QUERY, {
+    variables: {
+      category: props.categoryType
+    }
+  });
 
   return (
-    <aside className="w-[348px] bg-gray-700 p-6 border-l border-gray-600">
-      <span className="font-bold text-2xl pb-6 mb-6 border-b border-gray-500 block">
-        Cronograma de aulas
-      </span>
       <div className="flex flex-col gap-8">
         {data?.lessons.map((lesson: { id: Key | null | undefined; title: string; slug: string; availableAt: string | number | Date; lessonType: 'live' | 'class'; }) => {
           return (
@@ -46,6 +53,5 @@ export function Sidebar() {
           )
         })}
       </div>
-    </aside>
   );
 }
