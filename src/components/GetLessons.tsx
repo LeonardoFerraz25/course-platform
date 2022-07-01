@@ -40,7 +40,7 @@ export function GetLessons(props: GetLessonsProps) {
   });
 
   return (
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 mb-4">
         {data?.lessons.map((lesson: { id: Key | null | undefined; title: string; slug: string; availableAt: string | number | Date; lessonType: 'live' | 'class'; }) => {
           return (
             <Lesson
