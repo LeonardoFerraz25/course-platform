@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import { Header } from "../components/Header";
-import { Sidebar } from "../components/Sidebar";
 import { Categories } from "../components/Categories";
 import { Video } from "../components/Video";
 import { gql, useQuery } from "@apollo/client";
@@ -40,9 +39,12 @@ export function Course() {
       <main className="flex flex-1">
         { slug 
           ? <Video lessonSlug={slug} availableAt={ new Date(data.lesson.availableAt) } />
-          : <div className="flex-1"/>}
+          : (
+            <div className="flex-1"> 
+              <h1>Bem vindo ao Prólogo Course</h1>
+            </div>
+          )}
         <Categories />
-         {/* <Sidebar /> */}
       </main>
     </div>
   );
