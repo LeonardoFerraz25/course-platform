@@ -3,6 +3,7 @@ import { Header } from "../components/Header";
 import { Categories } from "../components/Categories";
 import { Video } from "../components/Video";
 import { gql, useQuery } from "@apollo/client";
+import { Home } from "../components/Home";
 
 const GET_LESSON_BY_SLUG_QUERY = gql`
 query GetLessonBySlug ($slug: String) {
@@ -39,11 +40,7 @@ export function Course() {
       <main className="flex flex-1">
         { slug 
           ? <Video lessonSlug={slug} availableAt={ new Date(data.lesson.availableAt) } />
-          : (
-            <div className="flex-1"> 
-              <h1>Bem vindo ao Prólogo Course</h1>
-            </div>
-          )}
+          : <Home />}
         <Categories />
       </main>
     </div>

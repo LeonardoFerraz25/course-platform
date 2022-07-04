@@ -3,7 +3,7 @@ import { gql, useQuery } from "@apollo/client";
 import { isPast } from 'date-fns';
 import { CaretRight, DiscordLogo, FileArrowDown, Image, Lightning } from "phosphor-react";
 import '@vime/core/themes/default.css';
-import AulaEmBreve from "./AulaEmBreve";
+import { Breve } from "./Breve";
 
 const GET_LESSON_BY_SLUG_QUERY = gql`
   query GetLessonBySlug ($slug: String) {
@@ -153,7 +153,7 @@ export function Video(props: VideoProps) {
           </>
         )
         : (
-          <AulaEmBreve />
+          <Breve />
         )}
     </div>
   );

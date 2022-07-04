@@ -1,7 +1,7 @@
 import { CaretDoubleRight } from "phosphor-react";
 import '../styles/embreve.css'
 
-export default function AulaEmBreve() {
+export function Breve() {
   return (
     <div className="flex flex-col items-center gap-8 justify-center section-breve">
       <h1 className="mt-6 font-['Inter'] font-medium embreve">
