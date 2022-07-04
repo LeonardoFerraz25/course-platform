@@ -105,7 +105,7 @@ export function Video(props: VideoProps) {
                     className="p-4 text-sm border border-orange-700 text-orange-700 flex items-center rounded font-bold uppercase gap-2 justify-center hover:bg-orange-700 hover:text-gray-900 transition-colors"
                   >
                     <Lightning size={24}/>
-                    Acesse o desafio
+                    Acesse o GitHub
                   </a>
                 </div>
               </div>
