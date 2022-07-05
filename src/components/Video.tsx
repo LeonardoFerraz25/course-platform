@@ -95,13 +95,15 @@ export function Video(props: VideoProps) {
                 <div className="flex flex-col gap-4">
                   <a
                     href="#"
+                    target="_blank"
                     className="p-4 text-sm bg-orange-700 flex items-center rounded font-bold uppercase gap-2 justify-center hover:bg-orange-600 transition-colors"
                   >
                     <DiscordLogo size={24}/>
                     comunidade do discord
                   </a>
                   <a
-                    href="#"
+                    href="https://github.com/LeonardoFerraz25"
+                    target="_blank"
                     className="p-4 text-sm border border-orange-700 text-orange-700 flex items-center rounded font-bold uppercase gap-2 justify-center hover:bg-orange-700 hover:text-gray-900 transition-colors"
                   >
                     <Lightning size={24}/>
@@ -112,6 +114,7 @@ export function Video(props: VideoProps) {
               <div className="gap-8 mt-20 grid grid-cols-2">
                 <a
                 href="#"
+                target="_blank"
                 className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors"
                 >
                   <div className="bg-orange-700 h-full p-6 flex items-center">
@@ -130,8 +133,9 @@ export function Video(props: VideoProps) {
                   </div>
                 </a>
                 <a
-                href="#"
-                className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors"
+                  href="#"
+                  target="_blank"
+                  className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors"
                 >
                   <div className="bg-orange-700 h-full p-6 flex items-center">
                     <Image size={40} />
